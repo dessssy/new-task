@@ -40,7 +40,15 @@ main {
   top: 0;
   left: 0;
   height: 0.5rem;
+  width: 0rem;
   background-color: #dd0d41;
+  -webkit-transition: width 20s;
+  transition: width 20s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+#time_bar.slide {
   width: 45rem;
 }
 
@@ -117,16 +125,21 @@ main {
   border: 0.1rem solid #0c4af8;
 }
 
+#answer_btns .btn:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
 #answer_btns .span,
 #answer_btns .btn {
   height: 2.7rem;
 }
 
 .initiate > button {
-  height: 10rem;
-  width: 15rem;
+  height: 7rem;
+  width: 7rem;
   border-radius: 50%;
-  font-size: 3rem;
+  font-size: 1.5rem;
   cursor: pointer;
   border-color: #0c4af8;
 }
@@ -135,9 +148,5 @@ main {
   background-color: #dd0d41;
   color: white;
   border: none;
-}
-
-.hide {
-  display: none;
 }
 /*# sourceMappingURL=task.css.map */

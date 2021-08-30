@@ -28,14 +28,21 @@ main {
     align-items: center;
 }
 
+
+
 #time_bar {
     position: absolute;
     top: 0;
     left: 0;
     height: 0.5rem;
+    width: 0rem;
     background-color: $red;
+    transition: width 20s;
+    transition-timing-function: linear;
+}
+
+#time_bar.slide {
     width: 45rem;
-    
 }
 
 .quiz_card {
@@ -95,6 +102,10 @@ main {
         border: 0.1rem solid $blue;
     }
 
+    .btn:active {
+        transform: translateY(2px);
+    }
+
     .span,
     .btn {
         height: 2.7rem;
@@ -103,10 +114,10 @@ main {
 }
 
 .initiate > button {
-    height: 10rem;
-    width: 15rem;
+    height: 7rem;
+    width: 7rem;
     border-radius: 50%;
-    font-size: 3rem;
+    font-size: 1.5rem;
     cursor: pointer;
     border-color: $blue;
 }
@@ -114,9 +125,10 @@ main {
 .initiate > button:hover {
     background-color: $red;
     color: $white;
-    border:none;   
+    border: none;   
 }
 
-.hide {
-    display: none;
-}
+
+// .hide{
+//     display: none;
+// }

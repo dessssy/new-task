@@ -1,13 +1,13 @@
 (function() {
     'use strict';
 
-const startButton = document.getElementById('start_btn');
-const quizCard = document.getElementById('card');
-const timerBar = document.getElementById('time_bar');
-const questionElement = document.getElementById('question');
-const pictureElement = document.getElementById('image');
-const answerBtns = document.getElementById('btn');
-const answerPockets = document.getElementsByClassName('wrapper');
+const startButton = document.querySelector('#start_btn');
+const quizCard = document.querySelector('#card');
+const timerBar = document.querySelector('#time_bar');
+const questionElement = document.querySelector('#question');
+const pictureElement = document.querySelector('#image');
+const answerBtns = document.querySelectorAll('#btn');
+const answerPockets = document.querySelector('.wrapper');
 
 let currentQuestion;
 
@@ -25,7 +25,7 @@ const questions = {
 
     
     // {
-    //     question: 'did you made it yourself?',
+    //     question: 'did you make it yourself?',
     //     picture: '',
     //     answers: [
     //         {text: 'i did', correct: false},
@@ -34,18 +34,16 @@ const questions = {
     //     ]
     // }
 
-
-   
-
-
 // TRIGGERING THE QUIZ
 
 startButton.addEventListener('click', startQuiz);
 
 function startQuiz(){
     console.log('ima vryzka');
+    timerBar.classList.add('slide');
     startButton.classList.add('hide');
     quizCard.classList.remove('hide');
+    
     currentQuestion = 0;
 
     showQuestion(); 
@@ -56,21 +54,25 @@ function showQuestion(){
     pictureElement.innerHTML = question.picture;
     
     questions.answers.forEach(answer => {
-        clearBtns()
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.setAttribute('id', 'btn')
-        button.setAttribute('class', 'btn')
-        answerBtns.appendChild(button)
+        clearBtns();
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.setAttribute('id', 'btn');
+        button.setAttribute('class', 'btn');
+        answerBtns.appendChild(button);
     });
 }
 
 function clearBtns(){
-    while(answerBtns.lastChild){
+    while(answerBtns.firstChild){
 
-        answerBtns.removeChild(answerBtns.lastChild)
+        answerBtns.removeChild(answerBtns.firstChild);
     }
 }
+
+
+
+
 
 
 })();
